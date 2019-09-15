@@ -19,7 +19,7 @@ var nav = {
         })
         //注册点击事件
         $('.js-register').click(function () {
-            window.location.href = './register.html'
+            window.location.href = './user-register.html'
         })
         //退出点击事件
         $('.js-logout').click(function () {
@@ -34,8 +34,7 @@ var nav = {
     loadUserInfo: function () {
         _user.checkLogin(function (res) {
             //把“登录注册”的隐藏，并把用户名信息显示，并且找到username，并把匹配到的用户名加载进去
-            $('.user.not-login').hide().siblings('.user.login').show()
-                .find('.username').text(res.username)
+            $('.user.not-login').hide().siblings('.user.login').show().find('.username').text(res.username)
         }, function (errMsg) {
             //do nothing
         })

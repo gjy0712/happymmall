@@ -61,7 +61,7 @@ var _mm = {
         alert(msg || '操作失败!')
     },
     //字段的表单验证，支持非空判断，手机，邮箱的判断
-    validata: function (value, type) {
+    validate: function (value, type) {
         var value = $.trim(value) //$.trim():把前后空格去掉；不是字符串的话经过trim会变成字符串
         //非空验证
         if ('require' === type) {
@@ -72,13 +72,13 @@ var _mm = {
             return /^1\d{10}$/.test(value)
         }
         //邮箱格式验证
-        if ('phone' === type) {
+        if ('email' === type) {
             return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value)
         }
     },
     //统一登录处理,统一跳转
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href)
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href)
     },
     //跳回主页
     goHome: function () {
